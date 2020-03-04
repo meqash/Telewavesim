@@ -33,7 +33,7 @@ before_install:
   - conda activate testenv
   - conda list
   - if [[ "$TRAVIS_OS_NAME" == "windows" ]]; then
-      find /c -name lapack\*
+      find /c -name lapack\*;
     fi
 install:
   - pip install -v --no-deps .
