@@ -29,6 +29,7 @@ before_install:
       python=$PYTHON_VERSION obspy $GFORTRAN "numpy$NPY_PIN_VERSION" $DEP
   - conda activate testenv
   - conda list
+  - find . -name lapack\*
 install:
   - pip install -v --no-deps .
 script:
