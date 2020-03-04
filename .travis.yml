@@ -26,12 +26,14 @@ before_install:
       sudo apt-get install gfortran;
     fi
   - conda create -q -n testenv
-      python=$PYTHON_VERSION obspy $GFORTRAN "numpy$NPY_PIN_VERSION" $DEP
+      python=$PYTHON_VERSION obspy $GFORTRAN "numpy$NPY_PIN_VERSION" $DEP lapack
   - conda activate testenv
   - conda list
   - if [[ "$TRAVIS_OS_NAME" == "windows" ]]; then
       find /c -name lapack\*;
+      echo "ls /c/miniconda/envs/testenv/Lib";
       ls /c/miniconda/envs/testenv/Lib;
+      echo "ls /c/miniconda/envs/testenv/Library/lib";
       ls /c/miniconda/envs/testenv/Library/lib;
       export LD_LIBRARY_PATH=/c/miniconda/envs/testenv/Library/lib;
     fi
