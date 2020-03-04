@@ -32,6 +32,8 @@ before_install:
   - if [[ "$TRAVIS_OS_NAME" == "windows" ]]; then
       find /c -name lapack\*;
       ls /c/miniconda/envs/testenv/Lib;
+      ls /c/miniconda/envs/testenv/Library/lib;
+      export LD_LIBRARY_PATH=/c/miniconda/envs/testenv/Library/lib;
     fi
   - echo $LD_LIBRARY_PATH
   - python -c "import numpy as np; np.__config__.show()"
