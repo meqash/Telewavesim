@@ -39,6 +39,7 @@ before_install:
     fi
   - echo $LD_LIBRARY_PATH
   - python -c "import numpy as np; np.__config__.show()"
+  - python -c "from numpy.distutils.system_info import get_info; print(get_info('lapack_opt'))"
 install:
   - pip install -v --no-deps .
 script:
