@@ -34,6 +34,7 @@ before_install:
       ls /c/miniconda/envs/testenv/Lib;
     fi
   - echo $LD_LIBRARY_PATH
+  - python -c "import numpy as np; np.__config__.show()"
 install:
   - pip install -v --no-deps .
 script:
