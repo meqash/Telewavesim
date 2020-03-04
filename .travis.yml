@@ -29,7 +29,9 @@ before_install:
       python=$PYTHON_VERSION obspy $GFORTRAN "numpy$NPY_PIN_VERSION" $DEP lapack
   - conda activate testenv
   - conda list
-  - find /c -name lapack\*
+  - if [[ "$TRAVIS_OS_NAME" == "windows" ]]; then
+      find /c -name lapack\*
+    fi
 install:
   - pip install -v --no-deps .
 script:
