@@ -25,9 +25,6 @@ before_install:
     else
       sudo apt-get install gfortran;
     fi
-  - if [[ "$TRAVIS_OS_NAME" == "windows" ]]; then
-      GFORTRAN="mingw";
-    fi
   - conda create -q -n testenv
       python=$PYTHON_VERSION obspy $GFORTRAN "numpy$NPY_PIN_VERSION" $DEP
   - conda activate testenv
@@ -35,6 +32,7 @@ before_install:
   - if [[ "$TRAVIS_OS_NAME" == "windows" ]]; then
       find /c -name lapack\*;
     fi
+  - echo $LD_LIBRARY_PATH
 install:
   - pip install -v --no-deps .
 script:
