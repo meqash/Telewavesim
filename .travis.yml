@@ -5,12 +5,9 @@ os:
   - windows
 env:
   - PYTHON_VERSION=3.5 NPY_PIN_VERSION="=1.15"
-  - PYTHON_VERSION=3.5
-  - PYTHON_VERSION=3.6
   - PYTHON_VERSION=3.7
 jobs:
   include:
-    - env: PYTHON_VERSION=3.7 DOCS=1
     - env: PYTHON_VERSION=3.7 SYSTEMGFORTRAN=1
       sudo: required
 before_install:
