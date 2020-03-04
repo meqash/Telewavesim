@@ -18,6 +18,11 @@ ext = [Extension(name='telewavesim.rmat_f',
                  libraries=['lapack'],
                  library_dirs=get_info('lapack').get('library_dirs'))]
 
+print("get_info('lapack'):", get_info('lapack'))
+print("get_info('lapack').get('library_dirs'):",
+      get_info('lapack').get('library_dirs'))
+
+
 setup(
     name='telewavesim',
     version=find_version('telewavesim', '__init__.py'),
