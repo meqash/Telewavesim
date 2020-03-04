@@ -26,7 +26,7 @@ before_install:
       sudo apt-get install gfortran;
     fi
   - conda create -q -n testenv
-      python=$PYTHON_VERSION obspy $GFORTRAN "numpy$NPY_PIN_VERSION" $DEP lapack
+      python=$PYTHON_VERSION obspy $GFORTRAN "numpy$NPY_PIN_VERSION" $DEP
   - conda activate testenv
   - conda list
   - if [[ "$TRAVIS_OS_NAME" == "windows" ]]; then
