@@ -31,6 +31,7 @@ before_install:
   - conda list
   - if [[ "$TRAVIS_OS_NAME" == "windows" ]]; then
       find /c -name lapack\*;
+      ls /c/miniconda/envs/testenv/Lib;
     fi
   - echo $LD_LIBRARY_PATH
 install:
